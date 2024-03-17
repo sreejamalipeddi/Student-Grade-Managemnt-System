@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SRIT EXAM-RESULTS REGISTRATION PORTAL</title>
+    <style>
+        body{
+                padding-top: 50px;
+                background: #50f1a6;
+            }
+
+        .header {
+            background-color: rgb(255, 209, 5); /* Dark background for header */
+            color: #332ae8; /* white text color for header */
+            text-align: center;
+            padding: 5px;
+            box-shadow: 0 4px 6px rgba(206, 86, 178, 0.1); /* Shadow effect for header */
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0px;
+            background-color: #50f1a6;
+            box-shadow: 0 2px 4px rgba(212, 36, 165, 0.2); /* Shadow effect for the content container */
+        }
+
+        .form-container {
+            padding: 10px;
+        }
+
+        .form-container input[type="text"],
+        .form-container input[type="email"],
+        .form-container input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        .form-container input[type="submit"] {
+            background-color: rgba(29, 232, 22, 0.909); /* Orange submit button color */
+            color: #e6c6e7;
+            border: none;
+            cursor: pointer;
+        }
+
+        .form-container input[type="submit"]:hover {
+            background-color: rgb(238, 98, 196)/* Hover color for the submit button */
+        }
+        .marquee {
+            font-size: 24px;
+            color: #5ad7e2;
+        }
+        .marquee-container {
+            text-align: center;
+            background-color: rgb(238,101,9);
+            padding: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        h2 {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>
+            <marquee direction="left">COLLEGE EXAM-RESULTS REGISTRATION</marquee>
+        </h1>
+    </div>
+    <div class="container">
+        <strong><h2>Welcome to Your Dream SRIT College</h2></strong>
+        <div class="form-container">
+            <h2>Exam - Results Registration</h2>
+            <form action="registration-success.html" onsubmit="return validateRegistrationForm(this);">
+                <strong> Name: <input type="text" name="name"> <br>
+                <strong> Password: <input type="text" name="pass"> <br>
+                <strong> Conform Password: <input type="text" name="con"> <br>
+                Email: <input type="email" name="email"> <br>
+                Student ID: <input type="text" name="studentID"> <br>
+                Branch:</strong><br>
+                <input type="radio" Name="Department" value="ECE">ECE<br>
+                <input type="radio" Name="Department" value="EEE">EEE<br>
+                <input type="radio" Name="Department" value="Mech">MECH<br>
+                <input type="radio" Name="Department" value="CSE">CSE<br>
+                <input type="radio" Name="Department" value="CSM">CSM<br>
+                <input type="radio" Name="Department" value="CSD">CSD<br>
+                <strong><label for="year">Year:</label></strong>
+                <select name="year" id="year">
+                <option value="">Select Year</option>
+                <option value="1st Year">1st Year</option>
+                <option value="2nd Year">2nd Year</option>
+                <option value="3rd Year">3rd Year</option>
+                <option value="4th Year">4th Year</option>
+                </select>
+                <input type="submit" value="Register">
+            </form>
+        </div>
+    </div>
+    <div class="marquee-container">
+        <marquee class="marquee" behaviour="scroll" direction="left">
+            **Register now for your dream college change your career its it's a turning point to get sucess in your life!!! Register today and join your dream college**
+        </marquee>
+
+    </div>
+
+    <script>
+        function validateRegistrationForm(form) {
+            var name = form.name.value;
+            var pass = form.pass.value;
+            var con = form.con.value;
+            var email = form.email.value;
+            var studentID = form.studentID.value;
+            var year = form.year.value;
+            var dept=form.Department.value;
+            
+            if (name.trim() === '') {
+                alert("Please enter your full name.");
+                return false;
+            }
+            if (pass.trim() === '') {
+                alert("Please enter your password.");
+                return false;
+            }
+            if (con.trim() === '') {
+                alert("Please enter your conform password correctly.");
+                return false;
+            }
+
+            if (email.trim() === '' || !isValidEmail(email)) {
+                alert("Please enter a valid email address.");
+                return false;
+            }
+
+            if (studentID.trim() === '' || !isValidStudentID(studentID)) {
+                alert("Please enter a valid student ID.");
+                return false;
+            }
+            if(dept.length==0){
+                alert("Select your department");
+                return false;
+            }
+            if (year === '') {
+                alert("Please select your year.");
+                return false;
+            }
+           
+
+            return true;
+        }
+
+        function isValidEmail(email) {
+            var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+            return emailPattern.test(email);
+        }
+
+        function isValidStudentID(studentID) {
+            var studentIDPattern = /^[a-zA-Z0-9._-]{10}$/; // Assuming a student ID is 8 digits.
+            return studentIDPattern.test(studentID);
+        }
+    </script>
+</body>
+</html>

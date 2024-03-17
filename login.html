@@ -1,0 +1,58 @@
+<html>
+    <head>
+        <title>Login</title>
+        <link rel="icon" href="Logo.png "/>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <script>
+            function myvalidate(form){
+                var userName=form.username.value;
+                var password=form.password.value;
+                
+                if(userName.length===0){
+                    alert("You must Enter Valid user name");
+                    return false;
+                }
+                if(password.length===0){
+                    alert("You must Enter Valid password");
+                    return false;
+                }
+                
+                
+                return true;
+            }
+        </script>
+        
+        <style>
+            body{
+                padding-top: 50px;
+                background: linear-gradient(rgba(19, 224, 207, 0.5),rgba(7, 231, 231, 0.671),rgba(3, 255, 150, 0.808));
+                font-weight:bold;
+            }
+            form{
+                margin:0px 30% 0px 30%; 
+                padding: 30px 0% 10px 3%;
+                box-shadow: 20px 20px 20px black;
+            }
+            h1{
+                text-shadow: 5px 5px 10px black;
+            }
+            
+        </style>
+    </head>
+    <body>
+        <center><h1><b>LOGIN<b></h1></center>
+        
+        <form action="mark.html" onsubmit="return myvalidate(this);">
+            USERNAME :<input type="username" name="username" autofocus/><br></br>
+                
+            PASSWORD  :<input type="password" name="password"></td> <br></br>
+                   
+                     <a href="regi.html">sign up  </a>
+                     <input type="submit" class="btn btn-primary"/>
+                    
+        </form>
+    
+    </body>
+    </html>

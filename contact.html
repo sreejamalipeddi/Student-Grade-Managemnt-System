@@ -1,0 +1,66 @@
+<html>
+    <head>
+        <title>Contact Page</title>
+        <style type="text/css">
+            body{
+                background-color: rgba(0, 255, 251,0.5);
+            }
+            .box{
+                width:350px;
+                height:390px;
+                border-radius: 15px;
+                background:#9df94d;
+                box-shadow: 10px 10px 10px rgb(217, 255, 0),10px 10px 20px rgb(0, 217, 255);
+            }
+        </style>
+        <script>
+            function contactMe(form){
+                const name=form.name.value.trim();
+                const phoneNumber=form.phone.value.trim();
+                const emailId=form.myemail.value.trim();
+                const address=form.myaddress.value.trim();
+                const message=form.mymessage.value.trim();
+                if(name === ''){
+                    alert("Enter valid name");
+                    return false;
+                }
+                if(phoneNumber === ''){
+                    alert("Enter valid phone number");
+                    return false;
+                }
+                if(emailId=== ''){
+                    alert("Enter Valid Email Id");
+                    return false;
+                }
+                if(address === ''){
+                    alert("you must enter address");
+                    return false;
+                }
+                if(message === ''){
+                    alert("you must enter message");
+                    return false;
+                }
+                return true;
+            }
+        </script>
+    </head>
+    <body>
+        <h1><center>Contact Us</center></h1>
+        <center><img src="telephone-symbol-button.png" height="12" width="12"> 7032041311
+                <br><br>
+                <img src="email.png" height="12" width="12"> shreshaguduthur@gmail.com<br>
+
+                
+        <br><br><center><div class="box">
+        
+        <form action="thankyou.html" onsubmit="return contactMe(this);">
+        <br><b>Name:<br></b><input type="text" name="name"><br><br>
+        <b>Phone Number:<br></b><input type="phonenumber" name="phone"><br><br>
+        <b>Email ID:<br></b><input type="email" name="myemail" ><br><br>
+        <b>Address:<br></b><textarea name="myaddress" cols="21" rows="5"></textarea><br>
+        <b>Message :<br></b><textarea name="mymessage" cols="21" rows="2"></textarea><br><br>
+        <input type="submit"></center>
+        </form>          
+        </div></center>          
+    </body>
+</html>
